@@ -16,9 +16,19 @@
         "NEXT_PUBLIC_AUTH_PROVIDERS",
         "NEXT_PUBLIC_GITHUB_CLIENT_ID",
         "NEXT_PUBLIC_VERCEL_APP_CLIENT_ID",
+        "POSTGRES_AWS_ACCOUNT_ID",
+        "POSTGRES_AWS_REGION",
+        "POSTGRES_AWS_RESOURCE_ARN",
+        "POSTGRES_AWS_ROLE_ARN",
+        "POSTGRES_PGDATABASE",
+        "POSTGRES_PGHOST",
+        "POSTGRES_PGPORT",
+        "POSTGRES_PGSSLMODE",
+        "POSTGRES_PGUSER",
         "POSTGRES_URL",
         "REDIS_URL",
-        "VERCEL_APP_CLIENT_SECRET"
+        "VERCEL_APP_CLIENT_SECRET",
+        "VERCEL_OIDC_TOKEN"
       ],
       "outputs": ["dist/**"]
     },
