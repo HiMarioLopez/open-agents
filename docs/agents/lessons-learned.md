@@ -106,3 +106,7 @@ Hard-won knowledge from building this codebase. When you make a mistake or disco
 - GitHub fork creation can take longer than a few seconds to become pushable; PR fallback should retry fork push on transient `repository not found` errors instead of failing immediately.
 - Git push failures from Vercel sandboxes can return empty output even when auth/write is denied; PR fallback logic should not rely only on matching "permission" text before attempting fork fallback.
 - When the GitHub App lacks push access (e.g. repo removed from installation scope), fail fast with a 403 directing users to /settings/connections rather than silently forking.
+
+## Deployment / Environment
+
+- `ENCRYPTION_KEY` is not read by the current app; do not include it in deploy templates, env examples, or Turborepo build env allowlists unless new code starts using it.
