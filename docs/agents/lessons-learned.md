@@ -110,3 +110,4 @@ Hard-won knowledge from building this codebase. When you make a mistake or disco
 ## Deployment / Environment
 
 - The old unused encryption env var is not read by the current app; do not include it in deploy templates, env examples, or Turborepo build env allowlists unless new code starts using it.
+- Vercel can run overlapping deployment builds against the same database, so build-time Drizzle migrations must use a Postgres advisory lock and tolerate narrow bootstrap "already exists" races for the migration schema.
