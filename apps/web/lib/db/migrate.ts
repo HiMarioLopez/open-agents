@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import { readMigrationFiles } from "drizzle-orm/migrator";
-import postgres from "postgres";
+import { createPostgresClient } from "./postgres";
 
 const MIGRATIONS_FOLDER = "./lib/db/migrations";
 const MIGRATIONS_SCHEMA = "drizzle";
@@ -29,13 +29,7 @@ type ErrorWithCause = {
   cause?: unknown;
 };
 
-const url = process.env.POSTGRES_URL;
-if (!url) {
-  console.log("POSTGRES_URL not set — skipping migrations");
-  process.exit(0);
-}
-
-const client = postgres(url, { max: 1 });
+const client = createPostgresClient({ max: 1 });
 const db = drizzle(client);
 
 function getErrorCode(error: unknown): string | undefined {

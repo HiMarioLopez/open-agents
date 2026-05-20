@@ -6,7 +6,6 @@ const DEPLOY_ENV_VARS = [
   "POSTGRES_URL",
   "BETTER_AUTH_SECRET",
   "BETTER_AUTH_URL",
-  "ENCRYPTION_KEY",
   "NEXT_PUBLIC_VERCEL_APP_CLIENT_ID",
   "VERCEL_APP_CLIENT_SECRET",
   "NEXT_PUBLIC_GITHUB_CLIENT_ID",
@@ -46,7 +45,7 @@ const DEPLOY_TEMPLATE_URL = (() => {
     ["env", DEPLOY_ENV_VARS.join(",")],
     [
       "envDescription",
-      "Neon can provide POSTGRES_URL automatically. Generate BETTER_AUTH_SECRET and ENCRYPTION_KEY yourself, then add your Vercel OAuth and GitHub App credentials for a full deployment.",
+      "Neon can provide POSTGRES_URL automatically. You can also use the Vercel AWS Postgres integration variables. Generate BETTER_AUTH_SECRET yourself, then add your Vercel OAuth and GitHub App credentials for a full deployment.",
     ],
     ["products", encodeURIComponent(JSON.stringify(DEPLOY_PRODUCTS))],
     ["skippable-integrations", "1"],

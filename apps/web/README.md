@@ -6,7 +6,9 @@ The following environment variables are required:
 
 | Variable | Description |
 |----------|-------------|
-| `POSTGRES_URL` | PostgreSQL connection string. Required for builds — migrations run automatically during `next build` via `lib/db/migrate.ts`. Preview deployments use a Neon branch database; production uses the main database. |
+| `POSTGRES_URL` | PostgreSQL connection string. Required unless the Vercel AWS Postgres integration variables are configured. Migrations run automatically during `next build` via `lib/db/migrate.ts`. |
+
+When using the Vercel AWS Postgres integration, the app reads `POSTGRES_AWS_REGION`, `POSTGRES_AWS_ROLE_ARN`, `POSTGRES_PGDATABASE`, `POSTGRES_PGHOST`, `POSTGRES_PGPORT`, `POSTGRES_PGSSLMODE`, and `POSTGRES_PGUSER` instead of `POSTGRES_URL`.
 
 ## Getting Started
 

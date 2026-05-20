@@ -60,6 +60,18 @@ POSTGRES_URL=
 BETTER_AUTH_SECRET=
 ```
 
+`POSTGRES_URL` can be replaced by Vercel AWS Postgres integration variables:
+
+```env
+POSTGRES_AWS_REGION=
+POSTGRES_AWS_ROLE_ARN=
+POSTGRES_PGDATABASE=
+POSTGRES_PGHOST=
+POSTGRES_PGPORT=
+POSTGRES_PGSSLMODE=
+POSTGRES_PGUSER=
+```
+
 ### Required for sign-in (Vercel OAuth)
 
 ```env
@@ -99,7 +111,7 @@ ELEVENLABS_API_KEY=
 ## Deploy your own copy on Vercel
 
 1. Fork this repo.
-2. Import the repo into Vercel. Neon Postgres is auto-provisioned if you use the deploy button above.
+2. Import the repo into Vercel. Neon Postgres is auto-provisioned if you use the deploy button above. You can also use the Vercel AWS Postgres integration instead of Neon.
 3. Generate a secret for session signing:
 
    ```bash
@@ -110,6 +122,7 @@ ELEVENLABS_API_KEY=
 
    ```env
    POSTGRES_URL=
+   # or use the Vercel AWS Postgres integration variables listed above
    BETTER_AUTH_SECRET=
    ```
 
