@@ -109,4 +109,4 @@ Hard-won knowledge from building this codebase. When you make a mistake or disco
 
 ## Deployment / Environment
 
-- `ENCRYPTION_KEY` is not read by the current app; do not include it in deploy templates, env examples, or Turborepo build env allowlists unless new code starts using it.
+- The old unused encryption env var is not read by the current app; do not include it in deploy templates, env examples, or Turborepo build env allowlists unless new code starts using it.
